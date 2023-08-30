@@ -22,14 +22,12 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 
+" install: "pip install pynvim black isort"
 " +++++++++++++++ Plugins ++++++++++++++
 call plug#begin()
 
-Plug 'https://github.com/Chiel92/vim-autoformat'
-
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   "Deoplete
-
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -42,8 +40,9 @@ let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
-
-" ++++++++++++++ AUTOFORMAT configuration ++++++++++
-" au BufWrite * :Autoformat
-" autocmd FileType vim,tex,txt let b:autoformat_autoindent=0
+" ++++++++++++++ ALE
+let g:ale_fixers = {
+\       '*': ['remove_trailing_lines', 'trim_whitespace'],
+\       'python': ['black', 'isort'],
+\}
 
