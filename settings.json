@@ -1,0 +1,15 @@
+{
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.fontSize": 16,
+    "explorer.confirmDelete": false,
+    "window.newWindowProfile": "Default",
+    
+    "terminal.integrated.profiles.osx": {
+        "fish": {
+            "path": "/opt/homebrew/bin/fish",
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "fish"
+
+}
